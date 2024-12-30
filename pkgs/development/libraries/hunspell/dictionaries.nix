@@ -1097,4 +1097,30 @@ rec {
       maintainers = with lib.maintainers; [ honnip ];
     };
   };
+
+  /* ARABIC */
+  ar = mkDict rec {
+    pname = "hunspell-dict-ar";
+    version = "3.7";
+
+    src = fetchFromGitHub {
+      owner = "linuxscout";
+      repo = "ayaspell";
+      rev = "36a90abb22c5033be58e709c8980160e0ce6c88c";
+      hash = "sha256-J4da/Gz9S61z/Q7Vads+pss65O0EoJ/4CaCDs+23UyA=";
+    };
+
+    dictFileName = "ar";
+    readmeFile = "README.md";
+
+    buildFlags = "TEMPLATE=. build";
+
+    meta = {
+      description = "AyaSpell Arabic Dictionary for Hunspell Spellchecker.";
+      homepage = "https://github.com/linuxscout/ayaspell";
+      license = with lib.licenses; [ gpl2 lgpl21 mpl11 ];
+      platforms = lib.platforms.all;
+    };
+  };
+
 }
