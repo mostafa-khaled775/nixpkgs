@@ -15228,6 +15228,8 @@ with pkgs;
     withXineBackend = true;
   };
 
+  quran-companion = qt6Packages.callPackage ../applications/misc/quran-companion { };
+
   qutebrowser = callPackage ../applications/networking/browsers/qutebrowser {
     inherit (__splicedPackages.qt6Packages) qtbase qtwebengine wrapQtAppsHook qtwayland;
   };
